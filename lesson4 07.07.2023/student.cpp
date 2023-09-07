@@ -1,11 +1,11 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 
-/* добавить:
-	   * поле емайл(char*)
-	   * конструктор  с 3я параметрами
-	   * методы аксессоры
-	   * удаление выделенной динамической памяти в деструкторе.
+/* РґРѕР±Р°РІРёС‚СЊ:
+	   * РїРѕР»Рµ РµРјР°Р№Р»(char*)
+	   * РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ  СЃ 3СЏ РїР°СЂР°РјРµС‚СЂР°РјРё
+	   * РјРµС‚РѕРґС‹ Р°РєСЃРµСЃСЃРѕСЂС‹
+	   * СѓРґР°Р»РµРЅРёРµ РІС‹РґРµР»РµРЅРЅРѕР№ РґРёРЅР°РјРёС‡РµСЃРєРѕР№ РїР°РјСЏС‚Рё РІ РґРµСЃС‚СЂСѓРєС‚РѕСЂРµ.
 */
 
 class Student
@@ -23,7 +23,7 @@ public:
 	}
 	Student(const char* n, int a, const char* e)
 	{
-		name = new char[strlen(n) + 1]; // выделяем память при создани  объекта !!
+		name = new char[strlen(n) + 1]; // РІС‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ РїСЂРё СЃРѕР·РґР°РЅРё  РѕР±СЉРµРєС‚Р° !!
 		strcpy_s(name, strlen(n) + 1, n);
 		email = new char[strlen(e) + 1];
 		strcpy_s(email, strlen(e) + 1, e);
@@ -32,7 +32,7 @@ public:
 	}
 	Student(const char* n, int a)
 	{
-		name = new char[strlen(n) + 1]; // выделяем память при создани  объекта !!
+		name = new char[strlen(n) + 1]; // РІС‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ РїСЂРё СЃРѕР·РґР°РЅРё  РѕР±СЉРµРєС‚Р° !!
 		strcpy_s(name, strlen(n) + 1, n);
 		age = a;
 		cout << "Constructor 2 params\n";
@@ -91,13 +91,15 @@ public:
 	}
 	~Student()
 	{
-		delete[] name; // явно освобождаем память при уничтожении объекта !!!!
+		delete[] name; // СЏРІРЅРѕ РѕСЃРІРѕР±РѕР¶РґР°РµРј РїР°РјСЏС‚СЊ РїСЂРё СѓРЅРёС‡С‚РѕР¶РµРЅРёРё РѕР±СЉРµРєС‚Р° !!!!
 		delete[] email;
 		cout << "Destructor\n";
 	}
 };
 
 int main() {
+	system("chcp 1251");
+
 	Student obj1("Oleg", 20);
 	obj1.Print();
 
